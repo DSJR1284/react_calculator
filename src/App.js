@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles.css';
 
 function App() {
   return (
@@ -28,7 +27,7 @@ function App() {
       <button>-</button>
       <button>.</button>
       <button>0</button>
-      <button>=</button>
+      <button className="span-two">=</button>
     </div>
   );
 }

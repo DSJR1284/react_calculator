@@ -8,8 +8,4 @@ function DigitButton({ dispatch, digit}) {
     )
 }
 
-
-
-
-
 export default DigitButton; 

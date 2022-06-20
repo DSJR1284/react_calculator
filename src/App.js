@@ -17,7 +17,7 @@ function reducer(state, { type, payload}) {
     case ACTIONS.ADD_DIGIT:
       return {
         ...state, 
-        currentOperand: `${currentOperand || ""}${payload.digit}`
+        currentOperand: `${state.currentOperand || ""}${payload.digit}`
       } 
   }
 }
@@ -25,16 +25,13 @@ function reducer(state, { type, payload}) {
 function App() {
   const [{currentOperand, previousOperand, operation}, dispatch] = useReducer(reducer, {})
 
-  dispatch({ type: ACTIONS.ADD_DIGIT, payload: {digit: 1}})
+  // dispatch({ type: ACTIONS.ADD_DIGIT, payload: {digit: 1}})
 
   return (
-    <div className = "calculator-grid">
-      <div className= "output">
-        <div className= "pervious-operand">{previousOperand} {operation}
-        <div className= "current-operand">{currentOperand}
-
-          </div>
-        </div>
+    <div className="calculator-grid">
+      <div className="output">
+        <div className="pervious-operand">{previousOperand} {operation}</div>
+        <div className="current-operand">{currentOperand}</div>         
       </div>
       <button className="span-two">AC</button>
       <button>DEL</button>

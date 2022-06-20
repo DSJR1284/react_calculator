@@ -1,4 +1,4 @@
-import {ACTIONS} from "./App"
+import { ACTIONS } from "./App"
 
 
 function OperationButton({ dispatch, operation}) {

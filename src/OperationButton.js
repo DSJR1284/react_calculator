@@ -1,6 +1,5 @@
 import { ACTIONS } from "./App"
 
-
 function OperationButton({ dispatch, operation}) {
     return (
         <button onClick={() => dispatch({ 

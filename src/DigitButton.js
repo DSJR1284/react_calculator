@@ -1,6 +1,5 @@
 import {ACTIONS} from "./App"
 
-
 function DigitButton({ dispatch, digit}) {
     return (
         <button onClick={() => dispatch({ 

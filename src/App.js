@@ -11,7 +11,6 @@ export const ACTIONS = {
   EVALUATE: 'evaluate'
 }
 
-
 function reducer(state, { type, payload}) {
   switch(type) {
     case ACTIONS.ADD_DIGIT:
@@ -36,14 +35,12 @@ function reducer(state, { type, payload}) {
       if (state.currentOperand == null && state.previousOperand == null) {
         return state
       }
-
       if (state.currentOperand == null) {
         return {
           ...state, 
           operation: payload.operation,
         }
       }
-
       if (state.previousOperand == null) {
         return {
           ...state, 
@@ -58,7 +55,6 @@ function reducer(state, { type, payload}) {
         operation: payload.operation,
         currentOperand: null
       }
-
     case ACTIONS.CLEAR: 
       return {}
     case ACTIONS.DELETE_DIGIT:
@@ -72,13 +68,11 @@ function reducer(state, { type, payload}) {
       if (state.currentOperand == null) return state 
       if (state.currentOperand.length === 1) {
         return { ...state, currentOperand: null}
-      }
-      
+      }      
       return {
         ...state, 
         currentOperand: state.currentOperand.slice(0, -1)
       }
-
     case ACTIONS.EVALUATE: 
       if (state.operation == null ||
         state.currentOperand == null ||
@@ -129,12 +123,8 @@ function formatOperand(operand) {
   return `${INTEGER_FORMATTER.format(integer)}.${decimal}`
 }
 
-
 function App() {
   const [{currentOperand, previousOperand, operation}, dispatch] = useReducer(reducer, {})
-
-  // dispatch({ type: ACTIONS.ADD_DIGIT, payload: {digit: 1}})
-
   return (
     <div className="calculator-grid">
       <div className="output">

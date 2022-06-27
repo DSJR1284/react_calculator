@@ -59,8 +59,17 @@ function evaluate ({currentOperand, previousOperand, operation}) {
     case "+": 
       computation = prev + current
       break
+      case "-": 
+      computation = prev - current
+      break
+      case "*": 
+      computation = prev * current
+      break
+      case "÷": 
+      computation = prev / current
+      break      
   }
-
+  return computation.toString()
 }
 
 function App() {
